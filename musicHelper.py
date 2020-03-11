@@ -15,7 +15,7 @@ def parseMusicTerms():
     # print('finish')
 
 def readMusicXML(song):
-    c = m.converter.parse(song)
+    c = m.converter.parse(song + '.mxl')
     c.write('midi', song + '.mid')
     c.write('musicxml', song + '.musicxml')
 
@@ -35,7 +35,7 @@ def mixSound():
 
 if __name__=='__main__':
     # song = 'reve.musicxml'
-    song = 'Una_furtiva_lagrima.mxl'
+    song = 'Una_furtiva_lagrima'
     readMusicXML(song)
 
     # parseMusicTerms()
