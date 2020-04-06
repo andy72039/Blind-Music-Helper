@@ -2,6 +2,7 @@ import csv
 import music21 as m
 import gtts as g
 from pydub import AudioSegment
+from midi2audio import FluidSynth
 
 musicTerms = []
 
@@ -33,10 +34,16 @@ def mixSound():
     # save the result
     output.export("mixed_sounds.mp3", format="mp3")
 
+def midi2Audio(song):
+    # FluidSynth().play_midi(song + '.mid')
+    fs = FluidSynth()
+    fs.midi_to_audio('input.mid', 'output.wav')
+
 if __name__=='__main__':
     # song = 'reve.musicxml'
     song = 'Una_furtiva_lagrima'
-    readMusicXML(song)
+    # readMusicXML(song)
 
     # parseMusicTerms()
     
+    midi2Audio(song)

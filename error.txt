@@ -1,2 +1,14 @@
-C:\Python37\lib\site-packages\pydub\utils.py:165: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
-  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Traceback (most recent call last):
+  File "musicHelper.py", line 49, in <module>
+    midi2Audio(song)
+  File "musicHelper.py", line 40, in midi2Audio
+    fs.midi_to_audio('input.mid', 'output.wav')
+  File "C:\Python37\lib\site-packages\midi2audio.py", line 46, in midi_to_audio
+    subprocess.call(['fluidsynth', '-ni', self.sound_font, midi_file, '-F', audio_file, '-r', str(self.sample_rate)])
+  File "C:\Python37\lib\subprocess.py", line 339, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "C:\Python37\lib\subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python37\lib\subprocess.py", line 1207, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] 系統找不到指定的檔案。
